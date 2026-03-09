@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	licensingApi "github.com/thalesgroupsm/ldk-golang-licensing-native-api"
+	licensingApi "github.com/hxlwork/ldk-golang-licensing-native-api"
 )
 
 /*vendor code for DemoMA*/
