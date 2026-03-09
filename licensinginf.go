@@ -265,20 +265,3 @@ func (l *LicensingApi) HaspTransfer(action string, scope string, vendor_code str
 	return
 
 }
-
-/*
-LicensingApi HaspConfig
-  - @param config parameters for the operation, in XML format
-
-@return
-*/
-func (l *LicensingApi) HaspConfig(config string, vendor_code string) (err int) {
-
-	configPtr := C.CString(config)
-	defer C.free(unsafe.Pointer(configPtr))
-	
-	vendor_code_p := append([]byte(vendor_code), 0)
-	err = int(C.hasp_config(configPtr, C.hasp_vendor_code_t(&vendor_code_p[0])))
-	return
-
-}
